@@ -53,7 +53,7 @@ model Rapor {
 model MataKuliah {
   id             String   @id @db.Char(11)
   kdmk           String   @unique @db.VarChar(20)
-  judul          String   @unique @db.VarChar(10)
+  judul          String   @unique @db.VarChar(32)
   sks            Int      @db.TinyInt
   tanggal_dibuat DateTime @default(now()) @map("tanggalDibuat")
   tanggal_diubah DateTime @updatedAt @map("tanggalDiubah")

@@ -1,15 +1,14 @@
-import type { Lecture } from './lecture.type.js';
+import type { Class } from './class.type.js';
 
 import db from '../../database/index.js';
 
-export default async function updateLecture(id: string, body: Lecture) {
+export default async function updateClass(id: string, body: Class) {
   try {
     const now = new Date();
-    const newLecture = await db.dosen.update({
+    const existingClass = await db.kelas.update({
       where: { id },
       data: {
         ...body,
-        tanggal_lahir: new Date(body.tanggal_lahir),
         tanggal_diubah: now,
       },
       select: { id: true },
@@ -17,7 +16,7 @@ export default async function updateLecture(id: string, body: Lecture) {
 
     return {
       code: 200,
-      payload: { id: newLecture.id },
+      payload: { id: existingClass.id },
     };
   } catch (error) {
     console.log(error);

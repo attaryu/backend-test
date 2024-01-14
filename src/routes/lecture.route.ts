@@ -7,7 +7,7 @@ import deleteLecture from '../services/lecture/deleteLecture.js';
 
 const lectureRoutes = Router();
 
-lectureRoutes.get('/dosen', async (req, res) => {  
+lectureRoutes.get('/dosen', async (req, res) => {
   try {
     const page = req.query.page ? parseInt(req.query.page as string) : 1;
     const data = await getAllLecture(page);
@@ -21,7 +21,7 @@ lectureRoutes.get('/dosen', async (req, res) => {
   }
 });
 
-lectureRoutes.post('/dosen', async (req, res) => {  
+lectureRoutes.post('/dosen', async (req, res) => {
   try {
     const data = await createNewLecture(req.body);
 

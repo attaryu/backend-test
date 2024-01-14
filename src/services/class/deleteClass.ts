@@ -1,8 +1,8 @@
 import db from '../../database/index.js';
 
-export default async function deleteLecture(id: string) {
+export default async function deleteClass(id: string) {
   try {
-    await db.dosen.delete({where: { id } });
+    await db.kelas.delete({ where: { id } });
     return { code: 204 };
   } catch (error) {
     console.log(error);

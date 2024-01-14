@@ -24,7 +24,7 @@ model Dosen {
 model Mahasiswa {
   id             String   @id @db.Char(11)
   nrp            String   @unique @db.Char(20)
-  nama_lengkap   String   @unique @map("namaLengkap") @db.VarChar(10)
+  nama_lengkap   String   @unique @map("namaLengkap") @db.VarChar(32)
   alamat         String   @db.VarChar(100)
   telepon        String   @db.Char(14)
   tanggal_lahir  DateTime @map("tanggalLahir")

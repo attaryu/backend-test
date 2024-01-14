@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "tsc && prisma generate --schema=./src/models/schema.prisma",
+    "build": "tsc && prisma generate --schema=./prisma/schema.prisma",
     "start": "node api/index.js",
     "dev": "concurrently \"tsc --watch\" \"nodemon -q dist\""
   },

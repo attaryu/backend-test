@@ -1,16 +1,15 @@
-import type { Lecture } from './lecture.type.js';
+import { Class } from './class.type.js';
 
 import db from '../../database/index.js';
 import generateId from '../../lib/nanoid.js';
 
-export default async function createNewLecture(body: Lecture) {
+export default async function createNewClass(body: Class) {
   try {
     const now = new Date();
-    const newLecture = await db.dosen.create({
+    const newClass = await db.kelas.create({
       data: {
         id: generateId(),
         ...body,
-        tanggal_lahir: new Date(body.tanggal_lahir),
         tanggal_dibuat: now,
         tanggal_diubah: now,
       },
@@ -19,7 +18,7 @@ export default async function createNewLecture(body: Lecture) {
 
     return {
       code: 201,
-      payload: { id: newLecture.id },
+      payload: { id: newClass.id },
     };
   } catch (error) {
     console.log(error);

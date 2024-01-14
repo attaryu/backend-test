@@ -1,13 +1,13 @@
 import express from 'express';
-import { json, urlencoded } from 'body-parser';
+import bp from 'body-parser';
 
-import routes from './routes';
+import routes from './routes/index.js';
 
 const app = express();
 const port = 3000;
 
-app.use(urlencoded({ extended: false }));
-app.use(json());
+app.use(bp.urlencoded({ extended: false }));
+app.use(bp.json());
 
 app.use(routes);
 

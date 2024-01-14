@@ -1,6 +1,6 @@
 import db from '../../database/index.js';
 
-export default async function getSpecificLecture(id: string) {
+export default async function getSpecificClass(id: string) {
   try {
     const perclass = await db.kelas.findFirst({
       where: { id },
